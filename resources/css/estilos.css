@@ -1,4 +1,4 @@
-*{
+/*{
     margin:0;
     padding:0;
     box-sizing: border-box;
@@ -6,7 +6,7 @@
 
 body{
     font-family:'open sans', sans-serif;
-}
+}*/
 
 .contenedor{
     padding: 60px 0;
@@ -24,7 +24,7 @@ body{
 }
 
 /* Header */
-
+/*
 header{
     width: 100%;
     height: 570px;
@@ -65,15 +65,17 @@ header #logo img{
     text-decoration: none;
 }
 
-.nav-right .item-options{
+.item-options2{
     color: #fff;
     overflow:hidden;
     padding:10px;
+    
     background-color: rgba(0,212,255,1) 100% ;
     border:3px solid white ;
     -webkit-border-radius: 5px;
     border-radius: 20px;
     text-align: right;
+    margin-left: 180px;
     text-decoration: none;
 }
 
@@ -88,7 +90,7 @@ header #logo img{
 
 nav > a:hover{
     text-decoration: underline;
-}
+}*/
 
 header .textos-header{
     display: flex;

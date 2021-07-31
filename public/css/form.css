@@ -1,0 +1,86 @@
+
+.center h1{
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom:1px solid silver ;
+}
+.center form{
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+form .campo{
+    
+    border-bottom: 2px solid black;
+    margin: 30px 0;
+}
+.campo input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+.campo select{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+.campo label{
+    
+    top: 50%;
+    left: 5px;
+    color: black;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events:none ;
+    transition: .5s;
+}
+.campo span::before{
+    content: '';
+    
+
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, rgb(15, 10, 116) 0%, rgba(60,156,195,1) 35%, rgba(0,212,255,1) 100%);
+    transition: .5s;
+}
+.campo input:focus~label,
+.campo input:valid~label{
+    top: -5px;
+    color: linear-gradient(90deg, rgb(15, 10, 116) 0%, rgba(60,156,195,1) 35%, rgba(0,212,255,1) 100%);
+}
+.campo input:focus~span::before,
+.campo input:valid~span::before{
+    width: 100%;
+}
+input[type="submit"]{
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    background: linear-gradient(90deg, rgb(15, 10, 116) 0%, rgba(60,156,195,1) 35%, rgba(0,212,255,1) 100%);
+    border-radius: 25px;
+    font-size: 18px;
+    color: black;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+}
+input[type="submit"]:hover{
+    border-color: rgba(0,212,255,1) 100%;
+    transition: .5s;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}

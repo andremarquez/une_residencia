@@ -1,4 +1,4 @@
-*{
+/*{
     margin:0;
     padding:0;
     box-sizing: border-box;
@@ -6,7 +6,7 @@
 
 body{
     font-family:'open sans', sans-serif;
-}
+}*/
 
 .contenedor{
     padding: 60px 0;
@@ -24,12 +24,12 @@ body{
 }
 
 /* Header */
-
+/*
 header{
     width: 100%;
     height: 570px;
-    background: linear-gradient(to bottom,  rgba(15, 10, 116, 0.671) 0%, rgba(60, 157, 195, 0.671) 35%, rgba(0, 213, 255, 0.671) 100%), url(/images/portada.png?afcaf86046a1e236cca892e6117aac8e);  
-    background: linear-gradient(to bottom,  rgba(15, 10, 116, 0.671) 0%, rgba(60, 157, 195, 0.671) 35%, rgba(0, 213, 255, 0.671) 100%), url(/images/portada.png?afcaf86046a1e236cca892e6117aac8e); 
+    background: linear-gradient(to bottom,  rgba(15, 10, 116, 0.671) 0%, rgba(60, 157, 195, 0.671) 35%, rgba(0, 213, 255, 0.671) 100%), url(../img/portada.png);  
+    background: linear-gradient(to bottom,  rgba(15, 10, 116, 0.671) 0%, rgba(60, 157, 195, 0.671) 35%, rgba(0, 213, 255, 0.671) 100%), url(../img/portada.png); 
     background-size: cover;
     
     position: inherit;
@@ -65,14 +65,17 @@ header #logo img{
     text-decoration: none;
 }
 
-.nav-right .item-options{
+.item-options2{
     color: #fff;
     overflow:hidden;
     padding:10px;
+    
     background-color: rgba(0,212,255,1) 100% ;
     border:3px solid white ;
+    -webkit-border-radius: 5px;
     border-radius: 20px;
     text-align: right;
+    margin-left: 180px;
     text-decoration: none;
 }
 
@@ -87,7 +90,7 @@ header #logo img{
 
 nav > a:hover{
     text-decoration: underline;
-}
+}*/
 
 header .textos-header{
     display: flex;

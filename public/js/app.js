@@ -19100,10 +19100,49 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/css/inicio.css":
+/*!**********************************!*\
+  !*** ./resources/css/inicio.css ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/css/login.css":
 /*!*********************************!*\
   !*** ./resources/css/login.css ***!
   \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/css/app.css":
+/*!*******************************!*\
+  !*** ./resources/css/app.css ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/css/form.css":
+/*!********************************!*\
+  !*** ./resources/css/form.css ***!
+  \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -19418,7 +19457,10 @@ process.umask = function() { return 0; };
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
+/******/ 			"css/form": 0,
+/******/ 			"css/app": 0,
 /******/ 			"css/login": 0,
+/******/ 			"css/inicio": 0,
 /******/ 			"css/estilos": 0
 /******/ 		};
 /******/ 		
@@ -19467,9 +19509,12 @@ process.umask = function() { return 0; };
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/login","css/estilos"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/login","css/estilos"], () => (__webpack_require__("./resources/css/estilos.css")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/login","css/estilos"], () => (__webpack_require__("./resources/css/login.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/form","css/app","css/login","css/inicio","css/estilos"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/form","css/app","css/login","css/inicio","css/estilos"], () => (__webpack_require__("./resources/css/estilos.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/form","css/app","css/login","css/inicio","css/estilos"], () => (__webpack_require__("./resources/css/inicio.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/form","css/app","css/login","css/inicio","css/estilos"], () => (__webpack_require__("./resources/css/login.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/form","css/app","css/login","css/inicio","css/estilos"], () => (__webpack_require__("./resources/css/app.css")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/form","css/app","css/login","css/inicio","css/estilos"], () => (__webpack_require__("./resources/css/form.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
