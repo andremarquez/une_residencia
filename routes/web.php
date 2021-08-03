@@ -1,10 +1,12 @@
 <?php
 
-
+use App\Http\Controllers\ApartamentoController;
+use App\Http\Controllers\CuentaApartamentoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UsuarioTesoreroController;
+use App\Models\CuentaApartamento;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +48,28 @@ Route::group(['middleware' => 'auth:web'], function () {
 
         // administracion de tesoreros
         Route::resource('tesorero', UsuarioTesoreroController::class);
+        Route::match(['get', 'post'],'/tesorero/{tesorero}/disable', [UsuarioTesoreroController::class, 'disable'])->name('tesorero.disable');
+        Route::match(['get', 'post'],'/tesorero/{tesorero}/active', [UsuarioTesoreroController::class, 'active'])->name('tesorero.active');
+
+        // listar apartamentos
+        Route::get('/apartamentos', [ApartamentoController::class, 'index'])->name('apartamentos.index');
+
+
+        // Rutas para Propietarios 
+        Route::name('propietario.')->prefix('propietario')->group(function () {
+            Route::get('/',[ CuentaApartamentoController::class, 'index'])->name('index');
+            Route::get('/create',[ CuentaApartamentoController::class, 'create'])->name('create');
+            Route::post('/store',[ CuentaApartamentoController::class, 'store'])->name('store');
+            Route::get('/{propietario}/edit',[ CuentaApartamentoController::class, 'edit'])->name('edit');
+            Route::match(['put', 'post'],'/{propietario}',[ CuentaApartamentoController::class, 'update'])->name('update');
+
+            Route::match(['get', 'post'],'/{propietario}/disable', [CuentaApartamentoController::class, 'disable'])->name('disable');
+            Route::match(['get', 'post'],'/{propietario}/active', [CuentaApartamentoController::class, 'active'])->name('active');
+            Route::match(['get', 'post'],'/{propietario}/liberar', [CuentaApartamentoController::class, 'liberar'])->name('liberar');
+    
+
+        });
+
     });
 
 
@@ -61,9 +85,12 @@ Route::group(['middleware' => 'auth:web'], function () {
         Route::get('/', function () {
             return view('dashboard.propietario');
         })->name('dashboard');
+
+       // Route::get('/create',[ CuentaApartamentoController::class, 'create'])->name('create');
+
     });
 
-    //Route::resource('roles', RoleController::class);
+    
 
 
 

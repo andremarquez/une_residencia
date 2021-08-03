@@ -7,35 +7,72 @@
 <?php
 // Si viene el usuario es porque se va a editar
 if(isset($user)){
-    $tituloForm = 'Editar Tesorero';
+    $tituloForm = 'Editar Cuenta Propietario';
 } else{
     // se creara y se necesita inicializar el objecto del usuario
-    $user = [
-        'id' => null,
-        'first_name' => '',
-        'last_name' => '',
-        'ci' => '',
-        'email' => '',
-        'phone' => ''
-    ];
-    $tituloForm = 'Registrar Tesorero';
-}
+    $user = new \App\Models\User();
+    $apartamento = new \App\Models\Apartamento();
 
+    $tituloForm = 'Crear Cuenta Propietario';
+    
+}
 ?>
 
 
 @section('admincontent')
 
 <h1>{{$tituloForm}}</h1>
-<form  action="{{$user['id']?route('admin.tesorero.update',['tesorero'=>$user['id']]):route('admin.tesorero.store')}}" method="POST" >
+<form  action="{{$user->id?route('admin.propietario.update',['propietario'=>$user->id]):route('admin.propietario.store')}}" method="POST" >
 
     @csrf
-    @if($user['id'])
+    @if($errors->any())
+    <div class="alert alert-danger">
+        <p><strong>Por favor, corrija los siguientes errores</strong></p>
+        <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+        </ul>
+    </div>
+@endif
+    @if(session('message'))
+        <div class="alert alert-danger">{{session('message')}}</div>
+    @endif
+    <div class="form-campo">
+        
+    <div class="form-group w-100">
+        <div class="fw-bold ">Apartamento</div>
+        <select class="custom-select w-100" {{$apartamento->id?'disabled':''}} class="w" name="apartamento_id"  required autofocus>
+            <option value="" disabled selected ></option>
+            @foreach ($apartamentos as $apart){
+
+                @if($apart->id == old('apartamento_id')?old('apartamento_id'):$apartamento->id)
+                    <option value="{{$apart->id}}" selected>{{$apart->level}}-{{$apart->code}}</option>    
+                @else
+                    <option value="{{$apart->id}}">{{$apart->level}}-{{$apart->code}}</option>
+                @endif
+                
+            }
+                
+            @endforeach
+            
+        </select>
+
+        @error('apartamento_id')
+        <div class="invalid-feedback2" role="alert">
+            <strong>{{ $message }}</strong>
+        </div>
+        @enderror
+        
+    </div>
+
+    
+    @if($user->id)
         <input type="hidden" name="_method" value="PUT" />
     @endif
     <div class="form-campo">
     <div class="campo">
-        <input type="text" name="first_name"  value="{{ old('first_name')??$user['first_name'] }}" required autofocus>
+        <input type="text" name="first_name"  value="{{ old('first_name')??$user->first_name }}" required autofocus>
         <span></span>
         <label >Nombre</label>
     </div>
@@ -85,7 +122,7 @@ if(isset($user)){
     <!-- campos de credenciales -->
     <div class="form-campo">
     <div class="campo">
-        <input type="email" name="email"   value="{{ old('email')??$user['email'] }}" required autofocus>
+        <input type="email" name="email"   value="{{ old('email')??$user['email'] }}" required >
         <span></span>
         <label >Correo electrónico</label>
     </div>
@@ -131,7 +168,7 @@ if(isset($user)){
 
     <div class="my-4 text-center row justify-content-evenly" >
 
-        <a class="btn btn-secondary" href="{{route('admin.tesorero.index')}}" value="Registrar">
+        <a class="btn btn-secondary" href="{{route('admin.propietario.index')}}" value="Registrar">
             Cancelar
         </a> 
         @if($user['id'])

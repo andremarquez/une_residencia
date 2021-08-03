@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/app.css">
+    <!--link rel="stylesheet" href="css/app.css"-->
     <link rel="stylesheet" href="css/login.css">
     <title>Inicio de Sesión</title>
 
@@ -17,8 +17,8 @@
     <div class="center">
 
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
+            <div class="row justify-between">
+                <div>
                     <div class="card  center">
                         <h1 class="card-header">{{ __('Iniciar Sesión') }}</h1>
 
@@ -26,20 +26,20 @@
                             <form method="POST" action="{{ route('auth.login') }}">
                                 @csrf
 
-                                <div class="form-group row ">
+                                <div class="">
                                     <!--label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Correo') }}</label-->
 
-                                    <div class="col-md-6 campo">
+                                    <div class="campo">
                                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autofocus>
                                         <span></span>
                                         <label>Usuario</label>
                                     </div>
                                 </div>
 
-                                <div class="form-group row ">
+                                <div class=" mt-2">
                                     <!--label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label-->
 
-                                    <div class="col-md-6 campo">
+                                    <div class="campo">
                                         <input id="password" type="password" class="form-control" name="password" required>
                                         <span></span>
                                         <label> Password</label>
@@ -64,8 +64,8 @@
                                 </div>
                                 @enderror
 
-                                <div class="form-group row mb-0">
-                                    <div class="col-md-8 offset-md-4">
+                                <div class=" mb-0">
+                                    <div class="offset-md-4">
                                         <input type="submit" class="btn btn-primary" value="{{ __('Iniciar Sesión') }}" />
                                         </input>
 

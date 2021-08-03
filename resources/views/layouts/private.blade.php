@@ -18,7 +18,8 @@
 
 </head>
 <body>
-    <header class="container">
+    <header class="custom-container">
+        
         <figure class="logo">
             <a href="/"><img src="/img/pics/logo.png" alt="Logo"></a>
         </figure>
@@ -27,14 +28,16 @@
         
             </nav>
         <nav>
-        <ul>
-            <li><a href="/logout" class="item-login">Cerrar Sesión</a></li>
-            </ul>
+            <a href="/logout" class="item-login">Cerrar Sesión</a>
         </nav>
+        
+
     </header>
     <div class="center">
     @yield('content')
     </div>
     
 </body>
+<script src="{{ asset('/js/app.js') }}"></script>
+<script src="{{ asset('/js/custom-bootstrap.js') }}"></script>
 </html>

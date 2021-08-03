@@ -7,43 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Residencia Uneista</title>
     <link rel="shortcut icon" href="img/pics/logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
+
     <header class="container">
         <figure class="logo">
-            <a href="/"><img src="img/pics/logo.png" alt="Logo"></a>
-        </figure>
-        <nav class="navegation">
-            <ul class="menu">
-                <li>
-                    <a href="#" class="item-options">Inicio</a>
-                </li>
-                <li>
-                    <a href="#nosotros" class="item-options">Sobre Nosotros</a>
-                </li>
-                <li>
-                    <a href="#servicios" class="item-options">Nuestros Servicios</a>
-                </li>
-                <li>
-                    <a href="#contacto" class="item-options">Contacto</a>
-                </li>
-            </ul>
-        </nav>
-        <nav>
-            <ul>
-                <li>
-                    <a href="/login" class="item-login">Inicio Sesión</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+        @if(Auth::user())
 
-    <!--header class="container">
-        <figure class="logo">
-            <img src="{{ asset('img/pics/logo.png') }}" alt="Logo">
+            @switch(Auth::user()->role_id)
+                @case(1)
+                <a href="/admin"><img src="/img/pics/logo.png" alt="Logo"></a>
+                    @break
+                @case(2)
+                <a href="/tesorero"><img src="/img/pics/logo.png" alt="Logo"></a>
+                    @break
+                @default
+                <a href="/propietario"><img src="/img/pics/logo.png" alt="Logo"></a>
+            @endswitch
+            
+        
+        @else
+        <a href="/"><img src="/img/pics/logo.png" alt="Logo"></a>
+        @endif
         </figure>
         <nav>
             <a href="#" class="item-options">Inicio</a>
@@ -51,18 +38,24 @@
             <a href="#servicios" class="item-options">Nuestros Servicios</a>
             <a href="#contacto" class="item-options">Contacto</a>
         </nav>
-        <nav class="nav-right">
-        <a href="/login" class="item-options">Inicio Sesión</a>
+        <nav>
+            <!-- validar si usuario esta autenticado -->
+            @if(Auth::user())
+                <a href="/logout" class="item-login">Cerrar Sesión</a>
+            @else
+                <a href="/login" class="item-login">Inicio Sesión</a>
+
+            @endif
+            
+      
         </nav>
-    </header-->
+    </header>
     <header>
         <section class="textos-header">
             <h1>RES. UNEISTA</h1>
             <h2>Vivir con Tranquilidad</h2>
         </section>
-        <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
-                <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path>
-            </svg></div>
+        <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path></svg></div>
     </header>
     <main>
         <section class="contenedor sobre-nosotros" id="nosotros">

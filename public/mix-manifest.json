@@ -1,10 +1,12 @@
 {
     "/js/app.js": "/js/app.js",
+    "/js/custom-bootstrap.js": "/js/custom-bootstrap.js",
     "/css/form.css": "/css/form.css",
     "/css/app.css": "/css/app.css",
     "/css/login.css": "/css/login.css",
     "/css/inicio.css": "/css/inicio.css",
     "/css/estilos.css": "/css/estilos.css",
+    "/css/listar.css": "/css/listar.css",
     "/img/edificio inicio.jpg": "/img/edificio inicio.jpg",
     "/img/facebook.png": "/img/facebook.png",
     "/img/imagen1-administrar.jpg": "/img/imagen1-administrar.jpg",
@@ -14,7 +16,6 @@
     "/img/instagram.png": "/img/instagram.png",
     "/img/Login.jpg": "/img/Login.jpg",
     "/img/Malagaa-1024x875.png": "/img/Malagaa-1024x875.png",
-    "/img/portada copy.png": "/img/portada copy.png",
     "/img/portada.png": "/img/portada.png",
     "/img/sobrenosotros.jpg": "/img/sobrenosotros.jpg",
     "/img/twitter.png": "/img/twitter.png"

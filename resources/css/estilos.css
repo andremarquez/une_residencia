@@ -1,4 +1,4 @@
-/*{
+*{
     margin:0;
     padding:0;
     box-sizing: border-box;
@@ -6,15 +6,9 @@
 
 body{
     font-family:'open sans', sans-serif;
-}*/
-
-.contenedor{
-    padding: 60px 0;
-    width: 90%;
-    max-width: 1000px;
-    margin: auto;
-    overflow: hidden;
 }
+
+
 
 .titulo{
     color: #e37222;
@@ -24,12 +18,11 @@ body{
 }
 
 /* Header */
-/*
+
 header{
     width: 100%;
     height: 570px;
     background: linear-gradient(to bottom,  rgba(15, 10, 116, 0.671) 0%, rgba(60, 157, 195, 0.671) 35%, rgba(0, 213, 255, 0.671) 100%), url(../img/portada.png);  
-    background: linear-gradient(to bottom,  rgba(15, 10, 116, 0.671) 0%, rgba(60, 157, 195, 0.671) 35%, rgba(0, 213, 255, 0.671) 100%), url(../img/portada.png); 
     background-size: cover;
     
     position: inherit;
@@ -42,7 +35,9 @@ header #logo img{
     width: 50px;
 }
 
-.container {
+
+
+.container{
     width: 100%;
     height: 60px;
     background: #00b09b;
@@ -51,7 +46,7 @@ header #logo img{
     justify-content: space-between;
     align-items: center;
     align-content: center;
-    padding: 0 6rem;
+    padding:  0px 10px 0px 50px;
     opacity: 0.95;
     box-sizing: border-box;
     position: sticky;
@@ -61,21 +56,19 @@ header #logo img{
 .item-options{
     color: #fff;
     margin-top: 2px;
-    margin: 0 2rem;
+    margin: 0 70px 0px 0px;
     text-decoration: none;
 }
 
-.item-options2{
+.item-login{
     color: #fff;
     overflow:hidden;
-    padding:10px;
-    
+    padding:  10px 10px 10px 10px;
     background-color: rgba(0,212,255,1) 100% ;
     border:3px solid white ;
-    -webkit-border-radius: 5px;
+    -webkit-border-radius: 20px;
     border-radius: 20px;
     text-align: right;
-    margin-left: 180px;
     text-decoration: none;
 }
 
@@ -90,7 +83,7 @@ header #logo img{
 
 nav > a:hover{
     text-decoration: underline;
-}*/
+}
 
 header .textos-header{
     display: flex;
@@ -127,8 +120,11 @@ header .textos-header{
 }
 
 .imagen-about-us{
-    width: 48%;
+    width: 400px;
+    height: 210px;
+    border-radius: 80px;
 }
+
 
 .sobre-nosotros .contenido-textos{
     width: 48%;
@@ -177,6 +173,7 @@ header .textos-header{
 
 .servicio-ind img{
     width: 90%;
+    border-radius: 80px;
 }
 
 .servicio-ind h3{
@@ -185,7 +182,7 @@ header .textos-header{
 
 .servicio-ind p{
    font-weight: 300;
-   text-align: justify;
+   text-align: center;
 }
 
 /* footer*/
@@ -254,3 +251,13 @@ footer{
     color:#9e9e9e;
 }
 
+
+
+header .container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+header .container ul {
+    list-style: none;
+}

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class Tesorero extends Authenticatable
 {
     use HasFactory, Notifiable;
 
@@ -24,7 +24,6 @@ class User extends Authenticatable
         'status',
         'email',
         'password',
-        'role_id'
     ];
 
     /**
@@ -50,5 +49,4 @@ class User extends Authenticatable
     {
         return $this->hasOne(Role::class);
     }
-
 }
