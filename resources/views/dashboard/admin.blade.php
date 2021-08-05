@@ -27,31 +27,26 @@
                 </li>
                 <li><a href="#" class="item-options">Proveedor</a>
                     <ul class="Submenu">
-                        <li><a href="RegistroProvee.html">Registrar</a></li>
-                        <li><a href="">Modificar</a> </li>
-                        <li><a href="">Listar</a></li>
-                        <li><a href="">Deshabilitar</a></li>
+                        <li><a href="{{route('admin.proveedor.create')}}">Registrar</a> </li>
+                        <li><a href="{{route('admin.proveedor.index')}}">Consultar</a> </li>
                     </ul>
                 </li>
                 <li><a href="#" class="item-options">Gastos</a>
                     <ul class="Submenu">
-                        <li><a href="">Registrar</a></li>
-                        <li><a href="">Modificar</a> </li>
+                        <li><a href="{{route('gastos.create')}}">Registrar</a></li>
+                        <li><a href="{{route('gastos.index')}}">Consultar</a> </li>
                     </ul>
                 </li>
                 <li> <a href="#" class="item-options">Factura</a>
                     <ul class="Submenu">
-                        <li><a href="">Crear</a></li>
-                        <li><a href="">Anular</a></li>
-                        <li><a href="">Listar</a></li>
-                        <li><a href="">Validar</a></li>
+                        <li><a href="{{route('facturas.index')}}">Consultar</a></li>
                     </ul>
                 </li>
                 <li> <a href="#" class="item-options">Comprobante</a>
-                    <ul class="Submenu">
+                    <!--ul class="Submenu">
                         <li><a href="">Listar</a></li>
                         <li><a href="">Validar</a></li>
-                    </ul>
+                    </ul-->
                 </li>
             </ul>
 @endsection

@@ -15,7 +15,7 @@ class User extends Authenticatable
      * The attributes that are mass assignable.
      *
      * @var array
-     */
+     */     
     protected $fillable = [
         'first_name',
         'last_name',
@@ -46,6 +46,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    // para obtener el rol del usuario
     public function roles()
     {
         return $this->hasOne(Role::class);

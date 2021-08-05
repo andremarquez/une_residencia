@@ -4,69 +4,73 @@
 
 @section('assets')
     <link href="{{ asset('/css/inicio.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 @endsection
 <?php
 
-    $user = Auth::user();
+$user = Auth::user();
 
 ?>
 
 @section('menu')
-<ul class="menu">
-    <li> <a href="facturatesorero.html" class="item-options">Factura</a>
-                    
-        <li> <a href="comprobantetesorero.html" class="item-options3">Comprobante</a>
-            
+    <ul class="menu">
+        <li>
+            <li><a href="{{route('gastos.index')}}">Gastos</a> </li>
         </li>
-            </ul>
+        <li><a href="{{route('facturas.index')}}">Facturas</a></li>
+        <li> <a href="comprobantetesorero.html" class="item-options3">Comprobante</a>
+
+        </li>
+    </ul>
 @endsection
 
 
 
 
 @section('content')
-    
-    
-        @if (Route::currentRouteName() == 'tesorero.dashboard')
-          
+
+
+    @if (Route::currentRouteName() == 'tesorero.dashboard')
+
         <div class="Arreglar">
-        
+
             <section class="seccion-perfil-usuario">
                 <div class="perfil-usuario-header">
                     <div class="perfil-usuario-portada">
                         <div class="perfil-usuario-avatar">
                             <img src="img/pics/logo.png" alt="img-avatar">
-                            
+
                         </div>
                     </div>
                 </div>
                 <div class="perfil-usuario-body">
                     <div class="perfil-usuario-bio">
-                        <h3 class="titulo">{{$user->first_name}} {{$user->last_name}}</h3>
-                        <p class="texto">Bienvenido al sistema Residencias Uneistas, donde nuestro lema es Vivir en tranquilidad</p>
+                        <h3 class="titulo">{{ $user->first_name }} {{ $user->last_name }}</h3>
+                        <p class="texto">Bienvenido al sistema Residencias Uneistas, donde nuestro lema es Vivir en
+                            tranquilidad</p>
                     </div>
                     <div class="perfil-usuario-footer">
                         <ul class="lista-datos">
-                            
-                            <li><i class="icono fas fa-phone-alt"></i> Telefono: {{$user->phone}}</li>
-                            <li><i class="icono fas fa-envelope"></i>Correo: {{$user->email}}</li>
+
+                            <li><i class="icono fas fa-phone-alt"></i> Telefono: {{ $user->phone }}</li>
+                            <li><i class="icono fas fa-envelope"></i>Correo: {{ $user->email }}</li>
                         </ul>
                         <ul class="lista-datos">
-                            
+
                             <li><i class="icono fas fa-id-card"></i>Cedula de identidad:
-                                {{$user->ci}}
+                                {{ $user->ci }}
                             </li>
                         </ul>
                     </div>
                 </div>
             </section>
-            
-        
-        </div> 
-        @else
+
+
+        </div>
+    @else
         <div class="px-2 py-2">
-            @if(session()->has('success'))
+            @if (session()->has('success'))
                 <div class="alert alert-success">
                     {{ session('success') }}
                 </div>
@@ -74,12 +78,13 @@
 
             @yield('admincontent')
         </div>
-            
-        @endif
+
+    @endif
 @endsection
 
 
 
+<!-- Modal -->
 <!-- Modal -->
 
 <div  style="display: none" class="modal fade"  id="ventanamodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="tituloventana" aria-hidden="true">

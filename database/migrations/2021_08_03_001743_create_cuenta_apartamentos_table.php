@@ -18,7 +18,7 @@ class CreateCuentaApartamentosTable extends Migration
             $table->foreignId('apartamento_id')->constrained('apartamentos')->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->foreignId('propietario_id')->constrained('users')->onDelete('cascade')
-                ->onUpdate('cascade');;
+                ->onUpdate('cascade');
             $table->date('start_date');
             // si es null, es porque existe una cuenta activa
             $table->date('end_date')->nullable();

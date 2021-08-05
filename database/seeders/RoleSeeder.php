@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Role;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -16,20 +17,20 @@ class RoleSeeder extends Seeder
     {
         DB::table('roles')->insert(
             [
-                'id' => 1,
+                'id' => Role::ROL_ADMIN,
                 'name' => 'Administrador'
             ]
         );
 
         DB::table('roles')->insert(
             [
-                'id' => 2,
+                'id' => Role::ROL_TESORERO,
                 'name' => 'Tesorero'
             ]
         );
         DB::table('roles')->insert(
             [
-                'id' => 3,
+                'id' => Role::ROL_PROPIETARIO,
                 'name' => 'Propietario'
             ]
         );

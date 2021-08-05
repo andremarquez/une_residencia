@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Role;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -15,16 +16,16 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-
+        // insertando data semilla o inicial
         DB::table('users')->insert([
             'id' => 1,
             'first_name' => 'Test',
             'last_name' => 'Admin',
             'email' => 'admin@residencia.com',
             'password' => Hash::make('12345678'),
-            'ci' => 'V-1234546',
+            'ci' => 'V-454545',
             'phone' => '1234546',
-            'role_id' => 1,
+            'role_id' => Role::ROL_ADMIN,
         ]);
 
         DB::table('users')->insert([
@@ -35,7 +36,7 @@ class UserSeeder extends Seeder
             'password' => Hash::make('12345678'),
             'ci' => 'V-1234546',
             'phone' => '1234546',
-            'role_id' => 2,
+            'role_id' => Role::ROL_TESORERO,
         ]);
         DB::table('users')->insert([
             'id' => 3,
@@ -43,23 +44,10 @@ class UserSeeder extends Seeder
             'last_name' => 'Propietario',
             'email' => 'propietario@residencia.com',
             'password' => Hash::make('12345678'),
-            'ci' => 'V-1234546',
+            'ci' => 'V-3434567',
             'phone' => '1234546',
-            'role_id' => 3,
+            'role_id' => Role::ROL_PROPIETARIO,
         ]);
-/*
-        DB::table('user_role')->insert([
-            
-            'user_id' => 1
-          ]);
 
-          DB::table('user_role')->insert([
-            'role_id' => 2,
-            'user_id' => 2
-          ]);
-          DB::table('user_role')->insert([
-            'role_id' => 3,
-            'user_id' => 3
-          ]);*/
     }
 }

@@ -21,5 +21,8 @@ class CuentaApartamento extends Model
         'end_date' => 'date'
     ];
 
+    public function apartamento(){
+        return $this->hasOne(Apartamento::class,'id');
+    }
 
 }
