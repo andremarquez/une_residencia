@@ -20,7 +20,7 @@ class GastoItem extends Model
 
 
     public function proveedor(){
-        return $this->hasOne(Proveedor::class,'id');
+        return $this->hasOne(Proveedor::class,'id','proveedor_id');
     }
 
 }
