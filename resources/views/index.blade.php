@@ -102,7 +102,7 @@
         <div class="contenedor-footer">
             <div class="content-foo">
                 <h4>Teléfono</h4>
-                <p>(0295)4174121</p>
+                <p>(0212)4843038</p>
             </div>
             <div class="content-foo">
                 <h4>Email</h4>

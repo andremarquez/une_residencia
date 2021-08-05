@@ -57,7 +57,7 @@
     
         @if (Route::currentRouteName() == 'admin.dashboard')
           
-        <div class="Arreglar">
+       
             
         
             <section class="seccion-perfil-usuario">
@@ -91,7 +91,7 @@
             </section>
             
         
-        </div> 
+        
         @else
         <div class="px-2 py-2">
             @if(session()->has('success'))

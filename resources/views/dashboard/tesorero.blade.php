@@ -19,7 +19,7 @@ $user = Auth::user();
             <li><a href="{{route('gastos.index')}}">Gastos</a> </li>
         </li>
         <li><a href="{{route('facturas.index')}}">Facturas</a></li>
-        <li> <a href="comprobantetesorero.html" class="item-options3">Comprobante</a>
+        <li> <a href="#" class="item-options3">Comprobante</a>
 
         </li>
     </ul>
@@ -33,7 +33,7 @@ $user = Auth::user();
 
     @if (Route::currentRouteName() == 'tesorero.dashboard')
 
-        <div class="Arreglar">
+        
 
             <section class="seccion-perfil-usuario">
                 <div class="perfil-usuario-header">
@@ -67,9 +67,9 @@ $user = Auth::user();
             </section>
 
 
-        </div>
+        
     @else
-        <div class="px-2 py-2">
+        
             @if (session()->has('success'))
                 <div class="alert alert-success">
                     {{ session('success') }}
@@ -77,7 +77,7 @@ $user = Auth::user();
             @endif
 
             @yield('admincontent')
-        </div>
+        
 
     @endif
 @endsection

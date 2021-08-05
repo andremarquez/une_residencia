@@ -30,11 +30,13 @@
         <nav>
             <a href="/logout" class="item-login">Cerrar Sesión</a>
         </nav>
-        
+    
 
     </header>
     <div class="center">
+        <div class="Arreglar">
     @yield('content')
+        </div>
     </div>
     
 </body>

@@ -72,13 +72,28 @@ body{
     justify-content: space-between;
     align-items: center;
     align-content: center;
-    padding: 0 5rem;
+    padding:  0px 10px 0px 50px;
     opacity: 0.95;
     box-sizing: border-box;
     position: sticky;
-    top: 0;    
+    top: 0; 
 }
 
+.item-options{
+    color: #fff;
+    margin: 0px 00px 0px 0px;
+    padding:  20px 20px 0px 0px;
+    text-decoration: none;
+}
+.item-options3{
+    color: #fff;
+    margin: 0px 00px 0px 0px;
+    padding:  0px 600px 0px 0px;
+    text-decoration: none;
+}
+footer span{
+  padding: 20px;
+}
 
 .logo {
     width: 40px;
@@ -165,7 +180,7 @@ nav ul{
 }
 .Arreglar{
     margin: 20px;
-    text-align: center;
+    
     padding: 100px;
 }
 
