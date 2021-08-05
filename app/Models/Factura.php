@@ -19,12 +19,12 @@ class Factura extends Model
     // para obtener gasto
     public function gasto()
     {
-        return $this->hasOne(Gasto::class,'id');
+        return $this->hasOne(Gasto::class,'id','gasto_id');
     }
 
     // para obtener cuenta apartamento
     public function cuenta()
     {
-        return $this->hasOne(CuentaApartamento::class,'id');
+        return $this->hasOne(CuentaApartamento::class,'id','cuenta_apartamento_id');
     }
 }

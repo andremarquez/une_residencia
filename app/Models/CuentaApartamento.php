@@ -22,7 +22,7 @@ class CuentaApartamento extends Model
     ];
 
     public function apartamento(){
-        return $this->hasOne(Apartamento::class,'id');
+        return $this->hasOne(Apartamento::class,'id','apartamento_id');
     }
 
 }
